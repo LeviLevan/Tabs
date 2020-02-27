@@ -46,9 +46,7 @@ class _TabsState extends State<Tabs> {
     return DefaultTabController(
       length: widget._allTabs.length,
       child: Scaffold(
-        drawer: Drawer(
-          child: widget._drawerItems,
-        ),
+        drawer: drawer(),
         appBar: appBar(),
         body: TabBarView(
             children: <Widget>[
@@ -78,6 +76,24 @@ class _TabsState extends State<Tabs> {
               )
             ],
         ),
+      ),
+    );
+  }
+
+  Widget drawer(){
+    return Drawer(
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+//                      begin: Alignment.topLeft,
+//                      end: Alignment.bottomRight,
+              begin: FractionalOffset.topCenter,
+              end: FractionalOffset.bottomCenter,
+              stops: [0.1,1],
+              colors: [Color(0xFF27C189),Color(0xFF237BBF)],
+            )
+        ),
+        child: widget._drawerItems,
       ),
     );
   }

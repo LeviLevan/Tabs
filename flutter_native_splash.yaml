@@ -1,0 +1,6 @@
+flutter_native_splash:
+  image:
+    assets/Union.png
+  color: "27C189"
+  android_disable_fullscreen:
+    true
