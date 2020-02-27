@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TabContentCompany extends StatefulWidget {
@@ -32,48 +33,50 @@ class _TabContentCompanyState extends State<TabContentCompany> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl1)
-                ),
-              ),
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl2)
-                ),
-              )
+              companyImage(widget._imageUrl1,0xFFFE5000),
+              companyImage(widget._imageUrl2,0xFFFFFFFF)
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl3)
-                ),
-              ),
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl4)
-                ),
-              )
+              companyImage(widget._imageUrl3,0xFFFFFFFF),
+              companyImage(widget._imageUrl4,0xFF0074CD)
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl5)
-                ),
-              ),
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl6)
-                ),
-              )
+              companyImage(widget._imageUrl5,0xFFF1B1C8),
+              companyImage(widget._imageUrl6,0xFF000000)
             ],
           )
         ],
       ),
     );
   }
+
+  Widget companyImage(image,color){
+    String _image = '';
+    int _color;
+
+    _image = image;
+    _color = color;
+
+    return Expanded(
+      child: Container(
+        margin: EdgeInsets.all(4.0),
+        decoration: new BoxDecoration(
+            color: Color(_color),
+            borderRadius: new BorderRadius.circular(8.0),
+            border: new Border.all(
+              width: 1.0,
+              color: Color.fromRGBO(192, 192, 192, 0.2),
+            )
+        ),
+        child: Center(
+            child: Image.asset(_image, height: 103.0,width: 160.0)
+        ),
+      ),
+    );
+  }
+
 }

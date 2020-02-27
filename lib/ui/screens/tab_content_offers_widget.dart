@@ -32,52 +32,47 @@ class _TabContentOffersState extends State<TabContentOffers> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl1,width: 160.0, height: 231.0,)
-                ),
-              ),
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl2, width: 160.0, height: 231.0,)
-                ),
-              )
+              offersImage(widget._imageUrl1, 160.0, 231.0),
+              offersImage(widget._imageUrl2, 160.0, 231.0)
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl3, width: 330.0, height: 184.0,)
-                ),
-              )
+              offersImage(widget._imageUrl3, 330.0, 184.0)
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl4,width: 160.0, height: 231.0,)
-                ),
-              ),
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl5,width: 160.0, height: 231.0,)
-                ),
-              )
+              offersImage(widget._imageUrl4, 160.0, 231.0),
+              offersImage(widget._imageUrl5, 160.0, 231.0)
             ],
           ),
           Row(
             children: <Widget>[
-              Expanded(
-                child: Center(
-                    child: Image.asset(widget._imageUrl6,width: 330.0, height: 184.0,)
-                ),
-              )
+              offersImage(widget._imageUrl6, 330.0, 184.0)
             ],
           ),
         ],
       ),
     );
   }
+
+  Widget offersImage(image,width,height){
+    String _image = '';
+    double _width;
+    double _height;
+    _image = image;
+    _height = height;
+    _width = width;
+
+    return Expanded(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Center(
+            child: Image.asset(_image, width: _width, height: _height)
+        ),
+      ),
+    );
+  }
+
 }
