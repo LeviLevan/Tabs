@@ -57,9 +57,20 @@ class _TabContentOffersState extends State<TabContentOffers> {
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(4.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(_image, fit: BoxFit.cover),
+        child: ShaderMask(
+          shaderCallback:(Rect){
+            return LinearGradient(
+              begin: FractionalOffset.topCenter,
+              end: FractionalOffset.bottomCenter,
+              colors: [Color.fromRGBO(0, 0, 0, 0.1), Color.fromRGBO(0, 0, 0, 0.4)],
+              stops: [0.5, 0.9]
+            ).createShader(Rect);
+          },
+          blendMode: BlendMode.srcATop,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(_image, fit: BoxFit.cover),
+          ),
         ),
       ),
     );
