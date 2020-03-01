@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tabs/ui/screens/tab_content_offers_widget.dart';
-import 'package:flutter_tabs/ui/screens/tab_content_company_widget.dart';
+import 'package:flutter_tabs/ui/widget/tab/offer_tabs.dart';
+import 'package:flutter_tabs/ui/widget/tab/company_tabs_widget.dart';
 
-class Tabs extends StatefulWidget {
+class MainScreen extends StatefulWidget {
 
   final _drawerItems = ListView(
     children: <Widget>[
@@ -37,10 +36,10 @@ class Tabs extends StatefulWidget {
   ];
 
   @override
-  _TabsState createState() => _TabsState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _TabsState extends State<Tabs> {
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -52,28 +51,10 @@ class _TabsState extends State<Tabs> {
             children: <Widget>[
               ListView(
                 children: <Widget>[
-                  TabContentOffers(
-                    imageUrl1:'assets/image_20.png',
-                    imageUrl2:'assets/image_22.png',
-                    imageUrl3:'assets/image_38.png',
-                    imageUrl4:'assets/image_20.png',
-                    imageUrl5:'assets/image_22.png',
-                    imageUrl6:'assets/image_38.png',
-                  ),
+                  OfferTabs()
                 ],
               ),
-              ListView(
-                children: <Widget>[
-                  TabContentCompany(
-                    imageUrl1:'assets/image_31.png',
-                    imageUrl2:'assets/image_13.png',
-                    imageUrl3:'assets/image_14.png',
-                    imageUrl4:'assets/image_15.png',
-                    imageUrl5:'assets/image_17.png',
-                    imageUrl6:'assets/image_12.png',
-                  ),
-                ],
-              )
+              CompanyTabs()
             ],
         ),
       ),
