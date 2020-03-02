@@ -18,9 +18,11 @@ class OfferTabs extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Expanded(
-            child: Wrap(
-              direction: Axis.horizontal,
-                children: offerList,
+            child: Center(
+              child: Wrap(
+                direction: Axis.horizontal,
+                  children: offerList,
+              ),
             ),
           )
         ],
