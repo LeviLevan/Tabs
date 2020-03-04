@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 class SearchAppBar extends StatefulWidget implements PreferredSizeWidget{
 
-  final _allTabs = <Tab>[
-    Tab( text: 'Предложения' ),
-    Tab( text: 'Компании' ),
-  ];
+  List<Tab> _allTabs;
+  SearchAppBar(this._allTabs);
 
-  @override
+   @override
   _SearchAppBarState createState() => _SearchAppBarState();
 
   @override

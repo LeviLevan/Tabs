@@ -10,6 +10,7 @@ class DrawerMenu extends StatefulWidget {
           backgroundColor: Colors.transparent,
         ),
       ),
+      //SizedBox( height: 50),
       ListTile(title: Text('Профиль')),
       ListTile(title: Text('Позиция')),
       ListTile(title: Text('Корпоратка')),
@@ -26,6 +27,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+
      child: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(

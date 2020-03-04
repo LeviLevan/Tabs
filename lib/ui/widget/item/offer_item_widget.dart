@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class OfferItem extends StatelessWidget {
 
   final String image;
-
-  OfferItem(this.image);
+  final bool isGlobal;
+  StaggeredTile staggeredTile;
+  OfferItem(this.image, {this.isGlobal=false}){
+    if(isGlobal)
+      this.staggeredTile =  const StaggeredTile.count(4, 2);
+    else
+      this.staggeredTile =  const StaggeredTile.count(2, 3);
+  }
 
   @override
   Widget build(BuildContext context) {
